@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book my show clone</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .nav{
+            /* border: 2px solid red; */
+            display:flex;
+            flex-direction:row;
+            justify-content: space-between;
+            background-color: #333545;
+        }
+        .first{
+            /* border:2px solid green; */
+            width:900px;
+            display:flex;
+            justify-content: space-around;
+            margin-left:40px;
+            
+        }
+        .search{
+            width:800px;
+            height:50px;
+            margin-top:25px;
+            margin-left:10px;
+            margin-right:10px;
+            border-radius: 10px;
+            font-size:20px;
+            text-align: center;
+
+        }
+        .second{
+            /* border:2px solid blue; */
+            display:flex;
+            justify-content: space-evenly;
+            gap:10px;
+            width:800px;
+            align-items: center;
+        
+        }
+        .second button{
+            margin-left:290px;
+            width:90px;
+            height:40px;
+            border-radius:10px;
+            background-color: #f33737;
+            color:#fff;
+            border-style: none;
+        }
+        .second label{
+            margin-left:200px;
+            /* border:2px solid red; */
+            color:#fff;
+            width:100px;
+            font-size: larger;
+        }
+        .second i{
+            margin-right:40px;
+            /* border:2px solid red; */
+            color:#fff;
+            margin-bottom:20px;
+            width:40px;
+            height:30px;
+        }
+        .nav2{
+            display:flex;
+            justify-content: space-around;
+            background-color: #222539;
+        }
+        .left{
+            /* border:2px solid red; */
+            display:flex;
+            justify-content: space-around;
+            gap:10px;
+            width:600px;
+            height:50px;
+            margin-left: -180px;
+            align-items: center;
+            font-size:20px;
+        }
+        .left a{
+            color:#b2bec7;
+            text-decoration: none;
+        }
+        .right a{
+            color:#fff;
+            font-size:20px;
+            text-decoration: none;
+        }
+        .right{
+            /* border:2px solid green; */
+            color:#90a9bd;
+            display:flex;
+            justify-content: space-between;
+            gap:10px;
+            width:500px;
+            margin-right:-190px;
+            align-items:center;
+        }
+        .heading{
+            /* border:2px solid red; */
+            margin-bottom:40px;
+            margin-top:20px;
+            display:flex;
+            flex-direction: row;
+            gap:1000px;
+        }
+        .heading2{
+            /* border:2px solid green; */
+            margin-left:20px;
+        }
+        .heading3{
+            /* border:2px solid blue; */
+           margin-left:20px;
+        }
+        .see{
+            margin-left:290px;
+        }
+        .col{
+            width:400px;
+            margin-left:50px;  
+        }
+        .card-img-top{
+            border:2px solid rgb(243, 240, 240);
+            border-radius:30px;
+        }
+        .img{
+            display:flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top:100px;
+        }
+        .box{
+            margin-top:50px;
+            display:flex;
+            justify-content: space-around;
+        }
+        .img1{
+            /* border:2px solid red; */
+            border-radius:30px;
+        }
+        .best{
+            margin-top:60px;
+            margin-left:40px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="first">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJEAAACRCAMAAAD0BqoRAAAA2FBMVEUwMkP////FHycrLT8fIjcsL0CIiZG/AADQ0NPBAAobHjQZHDPb3N7MzM8VGTDZ2dzaiovbgIPqvr+Tk5uCg4xNT1wAACSrq7HCABC7u7/s7O0lKDvos7QNEixWWGRrbHY6PEpfYWsBCSfbk5QgM0TLHiWqIiwAABuio6l5eoNCLz9ZLTx1KjdsLDr29vcAACC2ICmJJzNMLz6ZJC/VHCJhLDwAM0WTJjKiJC4AABPFMjTjoaPPUVTGOzz77O3LWlrTb3E0SVjxzM5WDCT33d46HTEAAAkAFzBMNWFAAAAF7ElEQVR4nO2YYVviRhCAM0mWBAjkMEIICwIxwRAwoqJn1UNqafv//1FnFhA00bN3T0+fPvN+wADJ5mV2ZnajpjEMwzAMwzAMwzAMwzAMwzAMwzAMwzDM/wkRpR+t8JxrcT67EHggPtpkQ3QZx/FIaFE6+W+Uvj/q8zNEOtd1Pb66no70FL+Koh8fuRBjYLx9pRADuf8+Oo91xVyPR1EkTk+LlQSO/ENCQycx3zxDJs7RM6WRvuNicqPrgnI997Ok5wzlyw/fgemB/baRcKBU2Xs/2RPSY4xX/DWKJjf5SNngVV5+9h6jEtS+a3S4d0Y01XOcXurxjL7bTx3jVxldz+KckYrUeZSex5NdpH7G6O3ZfhmjeT5Gay5nmOq7E3/G6CTsbaRENQzrm8ibYatn7BlV1bvodK5bOyhelqWEytY6UqIehubaqPRbr76pN6O3/lSr1+m10qO7yLCgGtGoEwT+2KDv5MBz7UQVraGVaq7flE9GZlIbUFHdxLfdgw3du/u2Hne7aua+PH5Dpdn1ILFrh0KQkRsEybpO5dB3a32BH/u+QfUU4F3k0D7KK6GRIsCuJAcdOnTwNGHW6LDTNzdGvQSALk9n5S+wI/tifVvAA4VqActYjy9/d9VwpkAjdcYhBsUcZ+rTljEEaAohMxqzWgMvn8MUI98PMkgqWtWGTpJ0wDnR6j5kfsmFjmYoo4oHkEiaNB2NHpeNRhdWy8YBwIN1AMeWHj/AgmL0B47h+QBjU9hQS3z0a0rjKAO3FACUTMPBryR6BVUxcKCfz2HKo7NeK4FOha7rt8IjAGngyd5JT8tgXCGjs0M1BFbaZYxGd1bbWsKBVUabO6sBK0u3jvE9TtqfgGO0PLcpBeVRaDr4S3oeOFr9rwBsrReAH2ITBFegV6eZXy/W1S+bAJrsY0g07QSnx2x2aI7OXPCqaDTuo5CkiyOdYtS19HKDDNrHeHwLcBtbK3hoY71JyI5MzcSEXtdaz8eECPGlp8kxOIMKvpgSUyI7Qk+7OLPJ6AgyNMo6mLwtjDMZDQ2ttTHCmbSlqrtJnDMqo0zDus9QS59f/e2A3axq2rb66y+MjCa6YL5mUDqrQdEC9i4jpKSKVnwtMCrf4eExPGKI4ggHgQzT5VUjDRelITgBBr1TlEbvNMK7qEmjVTZnFD9ki9tHOMZGMLrWzD4WLNV2sZGQmEh4zzG4Q8iMH521Dt6FAixolc0Z6fEKlovsHittiouIOcCiqlXEa0aHYAeQaJAlYPfyQu8z8k48yJrGemuUN7K6sIBVmzYnKoEqWJl9qv4iI6NJrWlYdUF1nFeNtrU2KKw17GYOBKEWzQpj1H7Ae9xh7eOqJmiVOEOZ+isx0qo4q5lWxZ5VmEbKqPXdfmRWsP6HMo0LjfT2AgAnLZ5GOFdBWK930GgvRtSPjPpv1I806kg4XSbGkWak0KiTbHt2Dfuthz37LNeztSoGSaqtUYERNsrVLW5zU9zJYlqXatSo94zot9qHGBUPg0IuSZ0mr6gbvVjXmmpdc9W6Zm/XNez7JZOSDIajZ0aPO6MudDGNZpjXlUQN51U14T4ZaXJ9l6BFHQRdcLqkC0m1yMho+gGu/X1Vh8YgobWfZne39ktcEgy19qfr7dm3FS2p9yvs0fi6RBXskfTnnLZrsm87wRB7hSzRT8N9/JgC0w8ce7zeYgo/EBQqu1n8ZEAbl93+qN7a2x+FakeEB+pPNTzd7B4t6oVzq0z7IXV8Cxk2bP1KXSm3w62vkz3Vl+V2f0Qjqc2RWbQ5+ndEl3jzpw3j1cXkfHNs3dEM6rNf/+idTs5H8VxJXeFzIz6BUDdoW/cLaLTpkeSXG+HDZJSe3uB2evMoFF1g1JZY+o/0QDn5ACNlEaXTp2hEN3G7AXBAWaR/jI9CPAUjmmLVtdtq63/5QSF6DhltmX4So9lT+V18tMyG9OrrjB5p9dGnCBEhout0ejObf45J24CZnk4/2X8m6d8iDMMwDMMwDMMwDMMwDMMwDMMwDMMwDPNT/AMYFKOZmHMhigAAAABJRU5ErkJggg=="
+width="230px" height="100px" alt="logo">
+
+<input type="search" placeholder="Search for Movies, Events,Plays,Sports and Ac..." class="search">
+        </div>
+        <div class="second">
+ <label for="lko">Lucknow</label>
+ <button type="submit">Sign in</button>
+ <i class="material-icons" style="font-size:50px">menu</i>
+        </div>
+    </nav>
+    <div class="nav2">
+        <div class="left">
+            <a href="#">Movies</a>
+            <a href="#">Stream</a>
+            <a href="#">Events</a>
+            <a href="#">Plays</a>
+            <a href="#">Sports</a>
+            <a href="#">Activities</a>
+            <a href="#">Buzz</a>
+        </div>
+        <div class="right">
+            <a href="#">ListyourShow</a>
+            <a href="#">Corporates</a>
+            <a href="#">Offers</a>
+            <a href="#">Gift Cards </a>
+        </div>
+    </div>
+    
+    <!-- main -->
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1682503326503_shazamweb.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1682487391153_nizamibandhuweb.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://assets-in.bmscdn.com/promotions/cms/creatives/1681123745909_webbannernpa.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <!-- 2nd Main -->
+
+      <div class="heading">
+        <div class="heading2"> <h2>Recommended Movies</h2>
+        </div>
+        <div class="heading3"><h3 class="see">See All</h3></div>
+      </div>
+
+      <div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="card">
+                <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@star-icon-202203010609.png,ox-24,oy-615,ow-29:ote-Ni44LzEwICA2MS45SyB2b3Rlcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00339118-gvcavdpszx-portrait.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Kisi Ka Bhai Kisi Ki Jaan</h5>
+                  <p class="card-text">Action/Comedy/Drama</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@like_202006280402.png,ox-24,oy-617,ow-29:ote-MjY3LjRLIGxpa2Vz,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00348725-grqrbbqnrs-portrait.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Ponniyin Selvan- Part 2</h5>
+                  <p class="card-text">Action/Adventure/Drama/Historical</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@like_202006280402.png,ox-24,oy-617,ow-29:ote-MTMzLjJLIGxpa2Vz,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00122562-snxucamjfy-portrait.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Fast X</h5>
+                  <p class="card-text">Action/Adventure/Crime/Thriller</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card">
+                <img src="https://assets-in.bmscdn.com/discovery-catalog/events/tr:w-400,h-600,bg-CCCCCC:w-400.0,h-660.0,cm-pad_resize,bg-000000,fo-top:oi-discovery-catalog@@icons@@star-icon-202203010609.png,ox-24,oy-615,ow-29:ote-Ny42LzEwICAxNC42SyB2b3Rlcw%3D%3D,ots-29,otc-FFFFFF,oy-612,ox-70:q-80/et00349309-ynqvrxxagk-portrait.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Evil Dead Rise</h5>
+                  <p class="card-text">Horror</p>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <!-- div3 -->
+
+      <div class="img">
+        <img src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-1440,h-120:q-80/stream-leadin-web-collection-202210241242.png" alt="">
+      </div>
+
+      <!-- pictures -->
+      <div class="best"><h2>The Best Of Live Events</h2></div>
+      <div class="box">
+        <div class="box1">
+        <img class="img1" src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:w-300:q-80/ipl-collection-202302270454.png" alt="">
+        </div>
+
+        <div class="box1">
+            <img class="img1" src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-NDArIEV2ZW50cw%3D%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300:q-80/workshop-and-more-web-collection-202211140440.png" alt="">
+            </div>
+
+            <div class="box1">
+                <img class="img1" src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-MTArIEV2ZW50cw%3D%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300:q-80/kids-zone-collection-202211140440.png" alt="">
+            </div>
+
+            <div class="box1">
+                <img class="img1" src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-MjArIEV2ZW50cw%3D%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300:q-80/comedy-shows-collection-202211140440.png" alt="">
+            </div>
+
+            <div class="box1">
+                <img class="img1" src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:ote-NCBFdmVudHM%3D,otc-FFFFFF,otf-Roboto,ots-64,ox-48,oy-320,ott-b:w-300:q-80/esports-collection-202211140440.png" alt="">
+            </div>
+    </div>
+</body>
+
+</html>
